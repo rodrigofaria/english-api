@@ -1,0 +1,33 @@
+{
+  "name": "english-api",
+  "version": "1.0.0",
+  "description": "English API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigofaria/english-api.git"
+  },
+  "keywords": [
+    "node",
+    "koa",
+    "english"
+  ],
+  "author": "Rodrigo Faria <rodrigolfsi@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rodrigofaria/english-api/issues"
+  },
+  "homepage": "https://github.com/rodrigofaria/english-api#readme",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-router": "^9.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5"
+  }
+}
