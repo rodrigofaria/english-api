@@ -6,5 +6,6 @@ const router = new Router({
 })
 
 router.post('/english', controller.test)
+router.post('/portuguese', controller.test2)
 
 module.exports = router
