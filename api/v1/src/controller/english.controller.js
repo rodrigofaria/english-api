@@ -5,7 +5,7 @@ const test = ctx => {
   const chat_id = chatMessage.message.chat.id
   const userName = chatMessage.message.from.first_name
 
-  const url = `https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage?chat_id=${chat_id}&text=Olá ${userName}`
+  const url = `https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage?chat_id=${chat_id}&text=Hello ${userName}`
   
   axios.post(url)
     .then(res => {
@@ -13,6 +13,7 @@ const test = ctx => {
       console.log(res)
     })
     .catch(error => {
+      console.log('Error send message')
       console.error(error)
     })
 }
