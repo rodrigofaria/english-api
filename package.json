@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/rodrigofaria/english-api#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "koa": "^2.13.0",
     "koa-body": "^4.2.0",
     "koa-router": "^9.4.0"
