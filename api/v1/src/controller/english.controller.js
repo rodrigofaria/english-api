@@ -11,15 +11,15 @@ const test = ctx => {
   console.log(`URL to send message: ${url}`)
   ctx.status = 200
 
-  // axios.post(url)
-  //   .then(res => {
-  //     console.log(`statusCode: ${res.statusCode}`)
-  //     console.log(res)
-  //   })
-  //   .catch(error => {
-  //     console.log('Error send message')
-  //     console.error(error)
-  //   })
+  axios.post(url)
+    .then(res => {
+      console.log(`statusCode: ${res.statusCode}`)
+      console.log(res)
+    })
+    .catch(error => {
+      console.log('Error send message')
+      console.error(error)
+    })
 }
 
 const test2 = ctx => {
