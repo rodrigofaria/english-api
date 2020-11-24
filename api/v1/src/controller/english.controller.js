@@ -9,6 +9,7 @@ const test = ctx => {
   
   console.log(chatMessage.message.text)
   console.log(`URL to send message: ${url}`)
+  ctx.status = 200
 
   // axios.post(url)
   //   .then(res => {
