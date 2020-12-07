@@ -2,6 +2,9 @@ const axios = require('axios')
 
 const sendMessage = async ctx => {
   const chatMessage = ctx.request.body
+  console.log('RODRIGO 1')
+  console.log(chatMessage)
+  console.log('RODRIGO 2')
   const chat_id = chatMessage.message.chat.id
   const userName = chatMessage.message.from.first_name
 
@@ -12,8 +15,7 @@ const sendMessage = async ctx => {
 
   return await axios.post(url)
     .then(res => {
-      console.log(`statusCode: ${res.statusCode}`)
-      console.log(res)
+      console.log(`statusCode: ${res.status}`)
       ctx.status = 200
       ctx.body = 'Message sent with success'
     })
