@@ -7,4 +7,6 @@ const app = new Koa()
 app.use(KoaBody())
 app.use(router.routes())
 
-app.listen(3000, () => console.log('Server started and listening port 3000'))
+const port = process.env.PORT | 3000
+
+app.listen(port, () => console.log(`Server started and listening port ${port}`))
