@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const test = ctx => {
+const sendMessage = ctx => {
   const chatMessage = ctx.request.body
   const chat_id = chatMessage.message.chat.id
   const userName = chatMessage.message.from.first_name
@@ -9,24 +9,22 @@ const test = ctx => {
   
   console.log(chatMessage.message.text)
   console.log(`URL to send message: ${url}`)
-  ctx.status = 200
 
-  axios.post(url)
+  return await axios.post(url)
     .then(res => {
       console.log(`statusCode: ${res.statusCode}`)
       console.log(res)
+      ctx.status = 200
+      ctx.body = 'Message sent with success'
     })
     .catch(error => {
-      console.log('Error send message')
+      console.log('Error sending message')
       console.error(error)
+      ctx.body = err
+      ctx.status = 500
     })
-}
-
-const test2 = ctx => {
-  ctx.body = 'Vamos aprender Portugues!!!'
 }
 
 module.exports = {
-  test,
-  test2
+  sendMessage
 }
