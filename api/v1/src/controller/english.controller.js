@@ -2,9 +2,6 @@ const axios = require('axios')
 
 const sendMessage = async ctx => {
   const chatMessage = ctx.request.body
-  console.log('RODRIGO 1')
-  console.log(chatMessage)
-  console.log('RODRIGO 2')
   const chat_id = chatMessage.message.chat.id
   const userName = chatMessage.message.from.first_name
 
