@@ -5,7 +5,6 @@ const router = new Router({
   prefix: '/api/v1'
 })
 
-router.post('/english', controller.test)
-router.post('/portuguese', controller.test2)
+router.post('/english', controller.sendMessage)
 
 module.exports = router
