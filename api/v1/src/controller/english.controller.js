@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const sendMessage = ctx => {
+const sendMessage = async ctx => {
   const chatMessage = ctx.request.body
   const chat_id = chatMessage.message.chat.id
   const userName = chatMessage.message.from.first_name
