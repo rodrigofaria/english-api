@@ -19,7 +19,7 @@ const sendMessage = async ctx => {
     .catch(error => {
       console.log('Error sending message')
       console.error(error)
-      ctx.body = err
+      ctx.body = error
       ctx.status = 500
     })
 }

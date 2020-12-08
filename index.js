@@ -1,6 +1,7 @@
 const Koa = require('koa')
 const KoaBody = require('koa-body')
 const router = require('./api/v1/src/routes.config')
+const index = require('./api/v1/src/models')
 
 const app = new Koa()
 
