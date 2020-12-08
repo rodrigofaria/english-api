@@ -8,16 +8,19 @@ const db = {}
 
 console.log('RODRIGO 1')
 let sequelize = new Sequelize(config.database, config.username, config.password, config)
+test(sequelize)
 
-try {
-  console.log('RODRIGO 1.0')
-  await sequelize.authenticate()
-  console.log('RODRIGO 1.1')
-} catch (err) {
-  console.log('RODRIGO 2.0')
-  console.log(err)
+const test = async seq => {
+  try {
+    console.log('RODRIGO 1.0')
+    await seq.authenticate()
+    console.log('RODRIGO 1.1')
+  } catch (err) {
+    console.log('RODRIGO 2.0')
+    console.log(err)
+  }
+  console.log('RODRIGO 2')
 }
-console.log('RODRIGO 2')
 
 fs
   .readdirSync(__dirname)
