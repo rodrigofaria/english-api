@@ -13,7 +13,6 @@ const port = process.env.PORT | 3000
 app.listen(port, () => console.log(`Server started and listening port ${port}`))
 
 
-test(index.sequelize)
 
 const test = async seq => {
   try {
@@ -26,3 +25,5 @@ const test = async seq => {
   }
   console.log('RODRIGO 2')
 }
+
+test(index.sequelize)
