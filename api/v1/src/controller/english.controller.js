@@ -5,7 +5,7 @@ const sendMessage = async ctx => {
   const chat_id = chatMessage.message.chat.id
   const userName = chatMessage.message.from.first_name
 
-  const url = `https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage?chat_id=${chat_id}&text=Hello ${userName}`
+  const url = encodeURI(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage?chat_id=${chat_id}&text=Hello ${userName}`)
   
   console.log(chatMessage.message.text)
   console.log(`URL to send message: ${url}`)
