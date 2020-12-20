@@ -10,7 +10,7 @@ const findByChatId = async chatId => {
   })
 }
 
-const save = async (chatId, name, email) => {
+const save = async (ctx, chatId, name, email) => {
   return await user.create({
     chatId: chatId,
     name: name,
