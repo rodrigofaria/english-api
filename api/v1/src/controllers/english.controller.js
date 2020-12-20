@@ -11,7 +11,7 @@ const sendMessage = async ctx => {
   let message = null
   
   if (user.length === 0) {
-    await userService.save(chatId, userName)
+    await userService.save(ctx, chatId, userName)
     message = `Olá ${userName}!\nPor favor, informe seu e-mail`
     await telegramService.sendMessage(ctx, chatId, message)
     return
