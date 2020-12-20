@@ -17,7 +17,7 @@ services:
       DATABASE_NAME: english_api
       DATABASE_PASSWORD: abc123
       DATABASE_PORT: 5432
-      BOT_TOKEN: 1421007224:AAHZQqOdpmwJwcgyQRlKt7NTGFMc_AoqRJ4
+      
     networks:
       my-network:
 
