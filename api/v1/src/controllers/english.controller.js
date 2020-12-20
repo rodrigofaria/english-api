@@ -7,7 +7,7 @@ const sendMessage = async ctx => {
   const chatMessage = ctx.request.body
   const chatId = chatMessage.message.chat.id
   const userName = chatMessage.message.from.first_name
-  const user = await userService.findByChatId(ctx, chatId)
+  const user = await userService.findByChatId(chatId)
   let message = null
   
   if (user.length === 0) {
