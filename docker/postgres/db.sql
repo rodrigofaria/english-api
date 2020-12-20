@@ -7,8 +7,8 @@
 CREATE TABLE public."user" (
 	id serial NOT NULL,
 	email varchar(150) NULL,
-	"name" varchar(150) NULL,
-	chat_id int4 NULL,
+	"name" varchar(150) NOT NULL,
+	chat_id int4 NOT NULL,
 	CONSTRAINT user_email_key UNIQUE (email),
 	CONSTRAINT user_pkey PRIMARY KEY (id)
 );

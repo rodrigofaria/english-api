@@ -5,11 +5,18 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    email: DataTypes.STRING,
-    name: DataTypes.STRING,
+    email: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     chatId: {
       type: DataTypes.INTEGER,
       field: 'chat_id',
+      allowNull: false,
     }
   }, {
     freezeTableName: true,
