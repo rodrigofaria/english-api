@@ -62,6 +62,13 @@ const setStatus = ctx => {
   ctx.body = 'Success!'
 }
 
+const test = ctx => {
+  const now = new Date()
+  console.log(`ENGLISH API CALLED AT ${now}`)
+  return setStatus(ctx)
+}
+
 module.exports = {
-  sendMessage
+  sendMessage,
+  test,
 }
