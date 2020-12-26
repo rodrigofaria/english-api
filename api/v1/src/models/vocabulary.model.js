@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
       field: 'user_id',
     },
     word: DataTypes.STRING,
-    phrase: DataTypes.STRING
+    phrase: DataTypes.STRING,
+    counter: DataTypes.INTEGER,
   }, {
     freezeTableName: true,
     timestamps: false

@@ -24,6 +24,7 @@ CREATE TABLE public.vocabulary (
 	user_id int4 NOT NULL,
 	word varchar(100) NOT NULL,
 	phrase varchar(250) NOT NULL,
+	counter int4 NOT NULL,
 	CONSTRAINT uniq_word UNIQUE (user_id, word),
 	CONSTRAINT vocabulary_pkey PRIMARY KEY (id)
 );
