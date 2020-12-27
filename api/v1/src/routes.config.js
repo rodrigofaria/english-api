@@ -6,6 +6,6 @@ const router = new Router({
 })
 
 router.post('/english', controller.sendMessage)
-router.post('/test', controller.test)
+router.post('/dailyWordReminder', controller.dailyWordReminder)
 
 module.exports = router
