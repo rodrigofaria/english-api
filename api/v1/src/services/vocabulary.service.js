@@ -16,7 +16,7 @@ const save = async (ctx, userId, word, phrase) => {
   })
 }
 
-const getMinCounter = async userId => {
+const getMinCounter = async (userId) => {
   return await vocabulary.min('counter',
   {
     where: {
@@ -27,6 +27,26 @@ const getMinCounter = async userId => {
   })
 }
 
+const getWordsByCounter = async (userId, counter) => {
+  return await vocabulary.findAll(
+  {
+    where: {
+      user_id: userId,
+      counter: counter
+    }
+  }).then(item => {
+    return item
+  })
+}
+
+const updateCounter = async vocabulary => {
+  vocabulary.counter++
+  await vocabulary.save()
+}
+
 module.exports = {
   save,
+  getMinCounter,
+  getWordsByCounter,
+  updateCounter,
 }

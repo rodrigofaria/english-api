@@ -1,4 +1,4 @@
-const { user } = require('../models/index')
+const { user, vocabulary } = require('../models/index')
 
 const findByChatId = async chatId => {
   return await user.findAll({
@@ -22,7 +22,23 @@ const save = async (ctx, chatId, name, email) => {
   })
 }
 
+const getUsersId = async () => {
+  user.hasMany(vocabulary)
+
+  return await user.findAll({
+    attributes: ['id', 'chat_id'],
+    include: [{
+      attributes: [],
+      model: vocabulary,
+      required: true
+    }]
+  }).then(items => {
+    return items
+  })
+}
+
 module.exports = {
   findByChatId,
   save,
+  getUsersId,
 }

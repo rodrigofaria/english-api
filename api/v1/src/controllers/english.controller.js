@@ -62,13 +62,34 @@ const setStatus = ctx => {
   ctx.body = 'Success!'
 }
 
-const test = ctx => {
+const dailyWordReminder = async ctx => {
   const now = new Date()
   console.log(`ENGLISH API CALLED AT ${now}`)
+  const usersId = await userService.getUsersId()
+  console.log(`Quantidade de usuarios na base com alguma palavra cadastrada: ${usersId.length}`)
+
+  await Promise.all(usersId.map(async (user) => {    
+    const id = user.get('id')
+    const chatId = user.get('chat_id')
+    const minCounter = await vocabularyService.getMinCounter(id)
+    const vocabularies = await vocabularyService.getWordsByCounter(id, minCounter)
+    const index = getRandom(vocabularies.length)
+    const vocabulary = vocabularies[index]
+    vocabularyService.updateCounter(vocabulary)
+    let message = `Olá! Vim aqui lembra-lo de uma palavra em inglês!`
+    await telegramService.sendMessage(ctx, chatId, message)
+    message = `Palavra: ${vocabulary.word}`
+    await telegramService.sendMessage(ctx, chatId, message)
+    message = `Frase: ${vocabulary.phrase}`
+    await telegramService.sendMessage(ctx, chatId, message)
+  }))
+
   return setStatus(ctx)
 }
 
+const getRandom = max => Math.floor(Math.random() * max)
+
 module.exports = {
   sendMessage,
-  test,
+  dailyWordReminder,
 }
